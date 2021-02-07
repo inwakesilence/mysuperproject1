@@ -1,0 +1,6 @@
+#!/bin/sh
+# x-serv001
+# Запускаем вложенный X-сервер
+Xephyr -ac :1 -screen 1024x768
+# Запускаем Openbox и Firefox внутри этого сервера
+lxc-start -n 001 -- bash -c "export DISPLAY=172.17.0.1:1; openbox & firefox"

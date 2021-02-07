@@ -1,0 +1,6 @@
+#!/bin/bash
+# T
+T() {
+Date > $1.txt
+Grep $1 /var/log/auth.log | tail -n $2 >> $1.txt
+} 
